@@ -10,16 +10,16 @@ const App = () => {
   const [user, setUser] = useState("");
   const [socket, setSocket] = useState(null);
   console.log("socket >>>", socket);
-  // console.log("user >>>", user);
-  // console.log("username >>>", username);
+  console.log("user >>>", user);
+  console.log("username >>>", username);
 
   useEffect(() => {
     setSocket(io("https://socket-io-for.herokuapp.com/"));
   }, []);
 
-  // useEffect(() => {
-  //   socket?.emit("newUser", user);
-  // }, [socket, user]);
+  useEffect(() => {
+    socket?.emit("newUser", user);
+  }, [socket, user]);
 
   return (
     <div className="container">
